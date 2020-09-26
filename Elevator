@@ -1,0 +1,59 @@
+#include <iostream>
+#include <string>
+
+int main()
+{
+    int Tracker = 0;
+    std::string LevelChoosed = "1";
+
+    std::string Current = "b";
+
+    std::string ElvatorLevels[] = { "b", "1","2", "3", "4", "5", "6", "7", "8", "9" };
+
+    while(LevelChoosed != "0")
+    {
+        Tracker = 0;
+        
+        std::cout << "\n";
+
+        std::cout << "You are Currently on level 0 or as we call it b for basement\n";
+
+        std::cout << "Type in the elvator level you wnat ( ";
+
+        for (int i = 0; i < 10; i++)
+        {
+            std::cout << ElvatorLevels[i] + ", ";
+        }
+        
+        std::cout << " ) or type the number 0 to get off\n";
+
+        std::cin >> LevelChoosed;
+
+        for (int j = 0; j < 10; j++)
+        {
+            if (LevelChoosed == ElvatorLevels[j])
+            {
+                std::cout << "Welcome to level " + LevelChoosed + ".\n";
+
+                if (LevelChoosed == Current)
+                {
+                    std::cout << "You are already on floor " + LevelChoosed + " and just to remind you that,\n";
+                }
+
+            }
+            else
+            {
+                Tracker = Tracker + 1;
+            }
+
+            if (Tracker > 9 && LevelChoosed != "0")
+            {
+                std::cout << "Can you stop playing games with the eleveator and type in an acutal number on the list\n";
+            }
+        }
+
+    }
+
+
+    std::cout << "Thank You for useing this Elvator that is rated at -3/5 stars!\n";
+}
